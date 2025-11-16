@@ -76,6 +76,8 @@ public class TestCases {
 
         public void Testcases03() {
                 System.out.println("Start Test case: testCase03");
+                String url = "https://leetcode.com/";
+                action.navigate_to_url(url);
 
                 action.click(By.xpath("//p[@class='link' and contains(text(),'View Questions')]"));
 
@@ -137,12 +139,12 @@ public class TestCases {
                                 By.xpath("//a[text() = 'Register or Log in']")));
 
                 WebElement verifying_Register = driver.findElement(By.xpath("//a[text() = 'Register or Log in']"));
-
-                boolean verify_Reg_login_text = verifying_Register.isDisplayed();
-                System.out.println(verifying_Register.getText());
+                
                 Assert.isTrue(verifying_Register.getText().equals("Register or Log in"),
                                 "Register or Log is displaying");
-                Assert.isTrue(verify_Reg_login_text, "Register or Log is displaying");
+
+                ////    verifying multipule times 'Register or Log' present or not  ///////
+                Assert.isTrue(verifying_Register.isDisplayed(), "Register or Log is displaying");
 
                 System.out.println("completed Test case: testCase05");
 
